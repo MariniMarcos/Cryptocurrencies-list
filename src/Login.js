@@ -34,7 +34,6 @@ const handleSubmit = (event) => {
     }
 
     // Aquí puedes enviar los datos al servidor o realizar otras acciones necesarias
-    toast.success('Cryptomonedas cargadas correctamente');
     setLoggedIn(true);
     setUsername('');
     setPassword('');
