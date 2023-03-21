@@ -1,6 +1,9 @@
 import React from 'react'
 
 const Card = ({ crypto }) => {
+    
+   const arg = crypto["current_price"] * 380
+    
     return (
         <div class="card">
             <div class="title">
@@ -23,7 +26,7 @@ const Card = ({ crypto }) => {
                 <p>
                     {crypto["current_price"].toFixed(2)} USD
                 <br />    
-                    {crypto["current_price"].toFixed(2)} ARG
+                    {arg.toFixed(2)} ARG
                 </p>
             </div>
         </div>
