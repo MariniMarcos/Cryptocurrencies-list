@@ -17,7 +17,8 @@ const CryptoListContainer = () => {
 
     return (
         <div className='CryptoListContainer'>
-            <h1>Busca tu crypto</h1>
+            <h1>Mercado Crypto</h1>
+            <input placeholder="Btc, Eth, Bnb, Ada .." class="input" name="text" type="text"></input>
             <CryptoList cryptos={prices} />
         </div>
     )

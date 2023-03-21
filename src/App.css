@@ -105,26 +105,38 @@
   transition: 500ms;
 }
 .card {
-  padding: 1rem;
-  background-color: #fff;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  background-color: rgb(255, 255, 255);
   max-width: 320px;
   border-radius: 20px;
-  border:  1px solid;
+  border:  1px solid #fcfcfc;
   margin-bottom: 1rem;
+  box-shadow: -1px -1px 15px #fcfcfc, 1px 1px 10px #ffffff, inset 1px 1px 10px #f8f8f8, inset -1px -1px 10px #d8d8d8;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .title {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
+  font-size: 15px;
+  font-weight: 600;
+  height: auto;
 }
-
 
 .title-text {
   margin-left: 0.5rem;
   color: #374151;
-  font-size: 18px;
+  font-size: 20px;
+}
+.title-text p{
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 3px;
 }
 
 .percent {
@@ -138,35 +150,16 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 0;
 }
 
 .data p {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
   color: #1F2937;
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-  font-weight: 700;
+  font-size:1rem;
   text-align: center;
+  padding: 0;
 }
 
-.data .range {
-  position: relative;
-  background-color: #E5E7EB;
-  width: 100%;
-  height: 0.5rem;
-  border-radius: 0.25rem;
-}
-
-.data .range .fill {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #10B981;
-  width: 100%;
-  height: 100%;
-  border-radius: 0.25rem;
-}
 a:-webkit-any-link{
   color: #ffffff;
   text-decoration: none;
@@ -179,8 +172,49 @@ a:-webkit-any-link{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 2rem;
   width: 100vw;
+  background-color: #5c21b5; 
+  text-align: center;
+}
+.CryptoListContainer h1{
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ffffff;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-family: 'Jura', sans-serif;
+  letter-spacing: 1px;
+  text-shadow: #CCC 1px 0 10px; 
+}
+               
+.negative{
+  color: #ff0000;
+}
+.rotate-180 {
+  transform: rotate(180deg);
+}
+.input {
+  background-color: #5c21b5;
+  max-width: 190px;
+  height: 20px;
+  padding: 10px;
+  text-align: center; 
+  border: 2px solid white;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  font-family: 'Jura', sans-serif;
+  font-size: 20px;
+}
+
+.input:focus {
+  color: rgb(255, 255, 255);
+  background-color: #5c21b5;
+  outline-color: rgb(255, 255, 255);
+  box-shadow: -3px -3px 15px rgb(255, 255, 255);
+  transition: .1s;
+  transition-property: box-shadow;
 }
 
 @media (prefers-reduced-motion: no-preference) {
