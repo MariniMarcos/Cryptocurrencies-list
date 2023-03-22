@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="formText">
+    <div className="textForm">
        <BrowserRouter>
        <Login/>
        <ToastContainer
