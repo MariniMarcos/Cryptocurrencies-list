@@ -124,6 +124,39 @@
   background-color: red;
   color: white;
 }
+.button5{
+  margin-bottom: 3em;
+  padding: 0.5em;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  transition: .4s ease-in-out;
+  background-color: #252525;
+  color: white;
+  width: 50vw;
+}
+
+.buttonGoogle{
+  padding: 0.5em;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  transition: .4s ease-in-out;
+  background-color: #2962ff;
+  color: white;
+  font-weight: 600;
+  background-image: url("https://img.icons8.com/color/48/000000/google-logo.png");
+  background-repeat: no-repeat;
+  background-position: auto;
+  background-size: 25px;
+  background-position-x: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
 .card {
   padding-left: 0.7rem;
   padding-right: 0.7rem;

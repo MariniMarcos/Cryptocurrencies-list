@@ -13,6 +13,8 @@ function Login() {
   const [error, setError] = useState()
   const { login, loginWithGoogle } = useAuth();
   const navigate = useNavigate()
+  const dismissAll = () =>  toast.dismiss();
+
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -25,11 +27,6 @@ function Login() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setError("");
-
-    if (username.trim() === '' || password.trim() === '') {
-      toast.error('Por favor, ingrese su usuario y contraseña');
-      return;
-    }
 
     try {
       await login(username, password)
@@ -50,11 +47,18 @@ function Login() {
     }
   };
 
-  const handleGoogleLogin = async () => {
-    await loginWithGoogle()
+  const handleGoogleLogin = async (event) => {
+    event.preventDefault();
+    dismissAll()
+    await loginWithGoogle();
     navigate('/');
   }
 
+  const handleRegister = (event) => {
+    event.preventDefault();
+    dismissAll()
+    navigate('/register')
+  }
   
 
   return (
@@ -92,10 +96,12 @@ function Login() {
             </div>
             <div class="btn">
               <button type="submit" class="button1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ingresar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-              <button class="button2">Registrarse</button>
+              <button onClick={handleRegister} class="button2">Registrarse</button>
             </div>
           </div>
-          <button onClick={handleGoogleLogin} className='button3'> Ingresar con google </button>
+          <button onClick={handleGoogleLogin} className='buttonGoogle'>    
+            <img src="../" alt="" />
+          Continuar con Google </button>
           <button class="button3">Olvide mi contraseña</button>
         </form>
     </div>

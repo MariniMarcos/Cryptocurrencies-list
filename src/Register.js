@@ -35,6 +35,7 @@ function Register() {
 
     try {
       await signup(username, password)
+        toast.success('Usuario registrado con éxito');
         Navigate('/')
     } catch (error) {
       if(error.code === "auth/weak-password"){
@@ -90,11 +91,9 @@ function Register() {
               />
             </div>
             <div class="btn">
-              <button type="submit" class="button1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ingresar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-              <button type="submit" class="button2">Registrarse</button>
+              <button type="submit" class="button5">Registrarse</button>
             </div>
           </div>
-          <button class="button3">Olvide mi contraseña</button>
         </form>
       )}
     </div>
