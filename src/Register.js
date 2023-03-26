@@ -8,12 +8,12 @@ import { Navigate, useNavigate } from 'react-router-dom';
 
 
 
-function Login() {
+function Register() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState()
-  const { login } = useAuth();
+  const { signup } = useAuth();
   const Navigate = useNavigate()
 
   const handleUsernameChange = (event) => {
@@ -34,20 +34,20 @@ function Login() {
     }
 
     try {
-      await login(username, password)
+      await signup(username, password)
         Navigate('/')
     } catch (error) {
       if(error.code === "auth/weak-password"){
+        setError(error.code)
         toast.error('La contraseña debe tener al menos 6 caracteres');
       }
       if(error.code === "auth/invalid-email"){
+        setError(error.code)
         toast.error('El correo electrónico no es válido');
       }
-      if(error.code === "auth/user-not-found"){
-        toast.error('Debes registrar tu usuario');
-      }
-      if(error.code === "auth/wrong-password"){
-        toast.error('Contraseña Incorrecta');
+      if(error.code === "auth/email-already-in-use"){
+        setError(error.code)
+        toast.error('El correo electrónico ya está en uso');
       }
     }
   };
@@ -102,7 +102,4 @@ function Login() {
 }
 
 
-export default Login;
-
-
-
+export default Register;
