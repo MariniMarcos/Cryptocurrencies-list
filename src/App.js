@@ -6,14 +6,18 @@ import Main from './Main';
 import Register from './Register';
 import { Route, Routes } from 'react-router-dom';
 import { AuthProvider } from './context/authContext';
-
+import ProtectedRoute from './ProtectedRoute';
 
 function App() {
   return (
     <div className="textForm">
       <AuthProvider>
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route path="/" element={
+            <ProtectedRoute>
+              <Main />
+            </ProtectedRoute>
+          } />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>

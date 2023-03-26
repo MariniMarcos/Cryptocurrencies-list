@@ -90,11 +90,11 @@ function Register() {
               />
             </div>
             <div class="btn">
-              <button type="submit" class="button1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-              <button class="button2">Sign Up</button>
+              <button type="submit" class="button1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ingresar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+              <button type="submit" class="button2">Registrarse</button>
             </div>
           </div>
-          <button class="button3">Forgot Password</button>
+          <button class="button3">Olvide mi contraseña</button>
         </form>
       )}
     </div>

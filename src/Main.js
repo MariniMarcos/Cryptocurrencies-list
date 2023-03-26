@@ -1,17 +1,16 @@
 import React from 'react'
 import CryptoListContainer from './CryptoListContainer';
 import { useAuth } from './context/authContext';
-import { useNavigate } from 'react-router-dom';
 
 
 const Main = () => {
     
     const {user, logout, loading} = useAuth()
-    const navigate = useNavigate()
+
 
     const handleLogout = async () => {
        await logout()
-         navigate('/login') 
+         
     }
 
     if(loading){

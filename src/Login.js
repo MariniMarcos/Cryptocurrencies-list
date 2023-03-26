@@ -2,19 +2,17 @@ import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
-import Main from './Main';
 import { useAuth } from './context/authContext';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 
 function Login() {
-  const [loggedIn, setLoggedIn] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState()
-  const { login } = useAuth();
-  const Navigate = useNavigate()
+  const { login, loginWithGoogle } = useAuth();
+  const navigate = useNavigate()
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -35,7 +33,7 @@ function Login() {
 
     try {
       await login(username, password)
-        Navigate('/')
+        navigate('/')
     } catch (error) {
       if(error.code === "auth/weak-password"){
         toast.error('La contraseña debe tener al menos 6 caracteres');
@@ -52,12 +50,15 @@ function Login() {
     }
   };
 
+  const handleGoogleLogin = async () => {
+    await loginWithGoogle()
+    navigate('/');
+  }
+
+  
 
   return (
     <div>
-      {loggedIn ? (
-        <Main />
-      ) : (
         <form className='form' onSubmit={handleSubmit}>
           <div className='Form' >
             <p id="heading">Login</p>
@@ -90,13 +91,13 @@ function Login() {
               />
             </div>
             <div class="btn">
-              <button type="submit" class="button1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-              <button class="button2">Sign Up</button>
+              <button type="submit" class="button1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ingresar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+              <button class="button2">Registrarse</button>
             </div>
           </div>
-          <button class="button3">Forgot Password</button>
+          <button onClick={handleGoogleLogin} className='button3'> Ingresar con google </button>
+          <button class="button3">Olvide mi contraseña</button>
         </form>
-      )}
     </div>
   );
 }
