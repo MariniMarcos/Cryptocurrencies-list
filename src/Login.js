@@ -11,7 +11,7 @@ function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState()
-  const { login, loginWithGoogle } = useAuth();
+  const { login, loginWithGoogle, resetPassword } = useAuth();
   const navigate = useNavigate()
   const dismissAll = () =>  toast.dismiss();
 
@@ -59,6 +59,26 @@ function Login() {
     dismissAll()
     navigate('/register')
   }
+
+  const handleResetPassword = async (event) =>{
+    event.preventDefault();
+    dismissAll()
+    if(!username){
+      toast.error("Debes ingresar tu correo electrónico")
+    }else{
+      try {
+        await resetPassword(username)
+        toast.success("Se ha enviado un correo electrónico para restablecer tu contraseña")
+      } catch (error) {
+        if(error.code === "auth/invalid-email"){
+          toast.error('El correo electrónico no es válido');
+        }
+        if(error.code === "auth/user-not-found"){
+          toast.error('Debes registrar tu usuario');
+        }
+      }
+    }
+  }
   
 
   return (
@@ -100,7 +120,7 @@ function Login() {
             </div>
           </div>
           <button onClick={handleGoogleLogin} className='buttonGoogle'>Continuar con Google</button>
-          <button class="button3">Olvide mi contraseña</button>
+          <button onClick={handleResetPassword}  class="button3">Restablecer mi contraseña</button>
         </form>
     </div>
   );
