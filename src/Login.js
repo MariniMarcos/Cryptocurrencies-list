@@ -99,9 +99,7 @@ function Login() {
               <button onClick={handleRegister} class="button2">Registrarse</button>
             </div>
           </div>
-          <button onClick={handleGoogleLogin} className='buttonGoogle'>    
-            <img src="../" alt="" />
-          Continuar con Google </button>
+          <button onClick={handleGoogleLogin} className='buttonGoogle'>Continuar con Google</button>
           <button class="button3">Olvide mi contraseña</button>
         </form>
     </div>

@@ -1,28 +1,22 @@
 import React from 'react'
 import CryptoListContainer from './CryptoListContainer';
 import { useAuth } from './context/authContext';
+import Navbar from './Navbar';
 
 
 const Main = () => {
-    
-    const {user, logout, loading} = useAuth()
 
+    const { logout} = useAuth()
 
     const handleLogout = async () => {
-       await logout()
-         
-    }
+        await logout()
 
-    if(loading){
-        return <h1>Cargando...</h1>
     }
-    
     return (
-        <main>
-            <h1>Lista de Criptomonedas</h1>
-            <button onClick={handleLogout}>Cerrar Sesión</button>
-              <CryptoListContainer/>
-        </main>
+        <div>
+            <Navbar/>
+            <CryptoListContainer />
+        </div>
     );
 }
 

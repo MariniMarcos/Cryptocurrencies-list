@@ -61,7 +61,7 @@ function Register() {
       ) : (
         <form className='form' onSubmit={handleSubmit}>
           <div className='Form' >
-            <p id="heading">Login</p>
+            <p id="heading">Registro</p>
             <div className='field'>
               <label htmlFor="username"></label>
               <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
