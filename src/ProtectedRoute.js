@@ -6,15 +6,14 @@ const ProtectedRoute = ({children}) => {
   
   const {user, loading} = useAuth()
   
+  if(loading){
+    return <h1>Cargando...</h1>
+  }
   if (!user){
-    return <Navigate to="/login"  />
+    return <Navigate to="/Login"  />
   }
 
   return (
-    
-    loading ? <div class="loader">
-    <div class="justify-content-center jimu-primary-loading"></div>
-    </div> :
     <>
       {children}
     </>

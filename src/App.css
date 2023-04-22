@@ -18,7 +18,17 @@
   height: 100%;
   padding-left: 1em;
   padding-right: 1em;
+  margin-top: 0.5rem;
 }
+.userInformation h3{
+  font-size: 1.6em;
+  font-weight: 600;
+  color: white;
+  margin-right: 1em;
+  font-family:  'Jura', sans-serif;
+  
+}
+
 .userImage{
   height: 50px;
   width: 50px;
@@ -245,15 +255,19 @@
   padding: 0;
   text-align: right;
 }
+
 .logout{
   background-color: transparent;
-  padding: 2rem;
-  border: transparent;
-  background-image: url("https://img.icons8.com/ios/50/a026d9/logout-rounded-left.png");
+  border: none;
+  outline: none;
+  padding: 1.5rem;
+  margin: 1rem;
+  background-image: url("https://img.icons8.com/ios/50/FFFFFF/logout-rounded-left.png");
   background-repeat: no-repeat;
-  background-position: 0.6rem;
+  background-position: 0.4rem;
   background-size: 45px;
   transform: rotate(180deg);
+  background-position-x: 0.2rem; 
 }
 
 a:-webkit-any-link{
@@ -284,6 +298,12 @@ a:-webkit-any-link{
   font-family: 'Jura', sans-serif;
   letter-spacing: 1px;
   text-shadow: #CCC 1px 0 10px; 
+}
+.CryptoDetail{
+  width: 100vw;
+  height: auto;
+  background-color: #101118; 
+  max-height: auto;
 }
 .Percent{
 padding-bottom: 1.5rem;

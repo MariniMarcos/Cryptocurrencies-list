@@ -7,6 +7,7 @@ import Register from './Register';
 import { Route, Routes } from 'react-router-dom';
 import { AuthProvider } from './context/authContext';
 import ProtectedRoute from './ProtectedRoute';
+import CryptoDetail from './CryptoDetail';
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
             </ProtectedRoute>
           } />
           <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          <Route path="/register" element={<Register />}/>
+          <Route path="/crypto/:id" element={<CryptoDetail/>}/>
         </Routes>
       </AuthProvider>
       <ToastContainer

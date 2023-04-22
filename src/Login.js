@@ -51,7 +51,7 @@ function Login() {
     event.preventDefault();
     dismissAll()
     await loginWithGoogle();
-    navigate('/');
+    navigate('/')
   }
 
   const handleRegister = (event) => {

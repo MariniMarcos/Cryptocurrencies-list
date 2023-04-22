@@ -3,6 +3,7 @@ import CryptoList from './CryptoList'
 import { useEffect, useState } from 'react';
 
 
+
 const CryptoListContainer = () => {
     const [prices, setPrices] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
@@ -23,7 +24,7 @@ const CryptoListContainer = () => {
     return (
         <div className='CryptoListContainer'>
             <h1>Mercado Crypto</h1>
-            <CryptoList cryptos={filteredCryptos} />
+            <CryptoList cryptos={filteredCryptos}/>
         </div>
     )
 }

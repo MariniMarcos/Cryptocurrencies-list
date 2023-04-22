@@ -12,6 +12,7 @@ import {
     signOut,
     GoogleAuthProvider,
     signInWithPopup,
+    signInWithRedirect,
     sendPasswordResetEmail
 } from "firebase/auth";
 
