@@ -47,7 +47,8 @@ function Login() {
     }
   };
 
-  const handleGoogleLogin = async () => {
+  const handleGoogleLogin = async (event) => {
+    event.preventDefault();
     dismissAll()
     await loginWithGoogle();
     navigate('/')
