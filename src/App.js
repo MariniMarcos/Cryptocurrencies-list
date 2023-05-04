@@ -8,6 +8,12 @@ import { Route, Routes } from 'react-router-dom';
 import { AuthProvider } from './context/authContext';
 import ProtectedRoute from './ProtectedRoute';
 import CryptoDetail from './CryptoDetail';
+import VerMiPerfil from './VerMiPerfil';
+import Nosotros from './Nosotros';
+import Seguridad from './Seguridad';
+import Configuracion from './Configuracion';
+
+
 
 function App() {
   return (
@@ -22,6 +28,10 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />}/>
           <Route path="/crypto/:id" element={<CryptoDetail/>}/>
+          <Route path="/miperfil" element={<VerMiPerfil/>}/>
+          <Route path="/nosotros" element={<Nosotros/>}/>
+          <Route path="/configuracion" element={<Configuracion/>}/>
+          <Route path="/seguridad" element={<Seguridad/>}/>
         </Routes>
       </AuthProvider>
       <ToastContainer

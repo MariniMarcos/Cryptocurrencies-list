@@ -1,14 +1,11 @@
 import React from 'react'
 import { useAuth } from './context/authContext'
+import Menu from './Menu'
 
 const Navbar = () => {
   
-    const { user, logout } = useAuth()
+    const { user} = useAuth()
 
-    const handleLogout = async () => {
-        await logout()
-
-    } 
   
     const userImage = user.photoURL
 
@@ -18,7 +15,7 @@ const Navbar = () => {
         <img className='userImage' src={userImage} />
         <h3> {user.displayName} </h3>
         </div>
-        <button className='logout' onClick={handleLogout}></button>
+        <Menu/>
     </div>
   )
 }

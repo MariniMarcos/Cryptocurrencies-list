@@ -8,7 +8,9 @@
   background-color: #101118; 
   display: flex;
   justify-content: space-around;
-  padding: 0.3rem;
+  padding: 0.2rem;
+  position: sticky;
+  top: 0;
 }
 .userInformation{
   display: flex;
@@ -39,7 +41,7 @@
 }
 
 .textForm {
-  background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
+  background-color: #101118;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -190,6 +192,22 @@
   align-items: center;
   justify-content: space-around;
 }
+.handleBackList{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1em;
+  margin-left: 5.5em;
+  margin-bottom: 1em;
+  color: rgb(0, 0, 0);
+  font-size: 1.2em;
+  font-weight: 600;
+  font-family: 'Jura', sans-serif;
+  cursor: pointer;
+  width: 50vw;
+}
+
 .card {
   padding-left: 0.7rem;
   padding-right: 0.7rem;
@@ -317,6 +335,7 @@ padding-bottom: 1.5rem;
   align-items: center;
   justify-content: center;
   font-size: 15px;
+  z-index: -1;
 }
 .rotate-180 {
   transform: rotate(180deg);
@@ -427,6 +446,80 @@ padding-bottom: 1.5rem;
   -webkit-animation-delay: 0.16s !important;
   animation-delay: 0.16s !important;
 }
+
+.menu-container{
+  background-color: #101118; 
+  text-align: center;
+  border-color: #CCC;
+  color: #CCC;
+  margin: 2rem;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+.menu-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 40px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-btn span {
+  height: 3px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+.menu-options {
+  list-style: none;
+  position: absolute;
+  right: 0;
+  background: rgb(16, 17, 24);
+  padding-left: 1rem;
+  border-color: rgb(204, 204, 204);
+  border-radius: 5px;
+  width: 100vw;
+  height: 100vh;
+  top: 83px;
+  z-index: 1000;
+}
+
+.menu-options li {
+  margin: 0;
+  padding: 0;
+  margin-left: 1rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  z-index: 1000;
+}
+
+.menu-options li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  text-align: left;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: 'Dosis', sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  z-index: 1000;
+}
+
+.menu-options #cerrarsesion {
+  color: rgba(255, 38, 0, 0.747);
+}
+
+.menu-options li a:hover {
+  background: #eee;
+  color: #333;
+}
+
 
 @-webkit-keyframes loading-keys-app-loading {
 
