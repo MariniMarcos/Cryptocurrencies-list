@@ -44,7 +44,7 @@ const Menu = () => {
             <li><a onClick={handleGoMercadoCrypto}>Mercado Crypto</a></li>
             <li><a onClick={handleGoMiPerfil}>Ver mi perfil</a></li>
             <li><a onClick={handleGoSeguridad}>Seguridad</a></li>
-            <li><a onClick={handleGoNosotros}>Nosotros</a></li>
+            <li><a onClick={handleGoNosotros}>Conocé al Team</a></li>
             <li><a onClick={handleGoConfiguracion}>Configuracion</a></li>
             <li><a id='cerrarsesion' onClick={handleLogout}>Cerrar Sesion</a></li>
           </ul>
