@@ -3,19 +3,19 @@ import { useAuth } from './context/authContext'
 
 const MiPerfil = () => {
   
-    const { user} = useAuth()
+    const { user } = useAuth()
+
+    const formatDate = (date) => {
+      const options = { year: 'numeric', month: 'long', day: 'numeric' }
+      return new Date(date).toLocaleDateString('es-ES', options)
+    }
   
   return (
     <div className='Miperfil' >
-      <img src={user.photoURL} alt="imagen de perfil" />
-      <h1>{user.displayName}</h1>
-      <h3>Correo: {user.email}</h3>
-      <h3>Telefono: {user.phoneNumber}</h3>
-      <h3>Direccion: {user.address}</h3>
-      <h3>Ciudad: {user.city}</h3>
-      <h3>Provincia: {user.province}</h3>
-      <h3>Pais: {user.country}</h3>
-      <h3>Codigo Postal: {user.postalCode}</h3>
+      {user &&  <img src={user.photoURL} alt="imagen de perfil"/>}
+      {user &&  <h1>{user.displayName}</h1>}
+      {user &&  <h3>Correo:{user.email} {user.emailVerified && <span>&#10004;</span>}</h3>}
+      {user &&  <h3>Usuario Creado:   {formatDate(user.metadata.creationTime)}</h3>}
     </div>
   )
 }

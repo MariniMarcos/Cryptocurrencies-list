@@ -222,6 +222,76 @@
   font-weight: 300;
 }
 
+.Nosotros{
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
+  padding-top: 0.7rem;
+  max-width: 85vw;
+  border-radius: 20px;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Dosis', sans-serif;
+  letter-spacing: 1px;
+  font-weight: 300;
+  align-items: center;
+}
+
+.cardProfile{
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
+  background-color: rgba(85, 85, 85, 0.11);
+  max-width: 85vw;
+  border-radius: 20px;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Dosis', sans-serif;
+  letter-spacing: 1px;
+  font-weight: 300;
+  align-items: center;
+}
+
+.cardProfile-image img{
+  border-radius: 50%;
+  max-width: 100vw;
+  max-height: 50vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+.cardProfile-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.cardProfile-text h2{
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 3px;
+}
+
+
+.cardProfile-text h3{
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 3px;
+}
+
+
+
 .title {
   display: flex;
   align-items: center;
@@ -482,7 +552,8 @@ padding-bottom: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
+  margin-top: 2rem;
   width: 100vw;
   height: 100vh;
   background-color: #101118; 
@@ -495,6 +566,12 @@ padding-bottom: 1.5rem;
   border-radius: 5px;
 }
 
+.Miperfil img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
 
 .menu-options {
   list-style: none;
@@ -549,6 +626,142 @@ padding-bottom: 1.5rem;
   background-color: white;
   color: black;
 }
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.bar {
+  display: inline-block;
+  width: 5px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, .5);
+  border-radius: 10px;
+  animation: scale-up4 1s linear infinite;
+}
+
+.bar:nth-child(2) {
+  height: 70px;
+  margin: 0 5px;
+  animation-delay: .25s;
+}
+
+.bar:nth-child(3) {
+  animation-delay: .5s;
+}
+
+@keyframes scale-up4 {
+  20% {
+    background-color: #ffff;
+    transform: scaleY(1.5);
+  }
+
+  40% {
+    transform: scaleY(1);
+  }
+}
+
+.toggle-switch {
+  position: relative;
+  width: 100px;
+  height: 50px;
+  --light: #d8dbe0;
+  --dark: #28292c;
+  --link: rgb(27, 129, 112);
+  --link-hover: rgb(24, 94, 82);
+}
+
+.switch-label {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  background-color: var(--dark);
+  border-radius: 25px;
+  cursor: pointer;
+  border: 3px solid var(--dark);
+}
+
+.checkbox {
+  position: absolute;
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.checkbox:checked ~ .slider {
+  background-color: var(--light);
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  -webkit-box-shadow: inset 12px -4px 0px 0px var(--light);
+  box-shadow: inset 12px -4px 0px 0px var(--light);
+  background-color: var(--dark);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.checkbox:checked ~ .slider::before {
+  -webkit-transform: translateX(50px);
+  -ms-transform: translateX(50px);
+  transform: translateX(50px);
+  background-color: var(--dark);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.Configuracion{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  width: 100vw;
+  height: 100vh;
+  background-color: #101118; 
+  text-align: left;
+  padding: 0.1rem;
+  border-color: #CCC;
+  font-size: 18px;
+  color: #CCC;
+  font-family: 'Dosis', sans-serif;
+  border-radius: 5px;
+}
+
+.lightMode{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff; 
+  text-align: left;
+  padding: 0.1rem;
+  border-color: #ffffff;
+  font-size: 18px;
+  color: #000000;
+  font-family: 'Dosis', sans-serif;
+  border-radius: 5px;
+}
+
+
 
 @-webkit-keyframes loading-keys-app-loading {
 
